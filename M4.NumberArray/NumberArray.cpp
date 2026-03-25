@@ -1,4 +1,6 @@
 #include "NumberArray.h"
+#include <stdexcept>
+using namespace std;
 
 
 /*
@@ -8,16 +10,16 @@
  Initializes all elements of the array to 0.0.
 */
 NumberArray::NumberArray(int size)
+	: size(size),
+	  data(nullptr)
 {
 	if (size <= 0)
-		this->size = MAX_SIZE;
-	else
-		this->size = size;
+	{
+		throw invalid_argument("Size must be greater than 0.");
+	}
+		
+	data = new double[size] {};
 
-	data = new double[this->size]();
-
-	for (int i = 0; i < this->size; i++)
-		data[i] = 0.0;
 }
 
 /*
