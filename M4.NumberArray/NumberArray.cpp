@@ -74,8 +74,11 @@ ignored to protect the array from out-of-bounds writes.
 */
 void NumberArray::setNumber(int index, double value)
 {
-	if (index >= 0 && index < size)
-		data[index] = value;
+	if (index < 0 || index >= size)
+	{
+		throw out_of_range("Index is out of bounds.");
+	}	
+	data[index] = value;
 }
 /*
 Accessor: getNumber
