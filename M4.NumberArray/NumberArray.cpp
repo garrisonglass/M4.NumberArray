@@ -69,8 +69,7 @@ NumberArray& NumberArray::operator=(const NumberArray& other)
 
 /*Mutator: setNumber
 Stores a value at the given index only if the index is
-within valid bounds (0 <= index < size). Invalid indices are
-ignored to protect the array from out-of-bounds writes.
+within valid bounds (index < 0 or >= size). Invalid indices throws an exception.
 */
 void NumberArray::setNumber(int index, double value)
 {
