@@ -39,7 +39,7 @@ Copy constructor
 */
 NumberArray::NumberArray(const NumberArray& other)
 	: size(other.size),
-	  data(nullprt)
+	  data(nullptr)
 {
 	data = new double[size];
 	for (int i = 0; i < size; i++)
