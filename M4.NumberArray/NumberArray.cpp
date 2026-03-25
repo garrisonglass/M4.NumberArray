@@ -1,5 +1,6 @@
 #include "NumberArray.h"
 #include <stdexcept>
+#include <iostream>
 using namespace std;
 
 
@@ -33,9 +34,19 @@ NumberArray::~NumberArray()
 	delete[] data;
 	cout << "Destructor called. Memory released.\n";
 }
-
 /*
-Mutator: setNumber
+Copy constructor
+*/
+NumberArray::NumberArray(const NumberArray& other)
+	: size(other.size),
+	  data(nullprt)
+{
+	data = new double[size];
+	for (int i = 0; i < size; i++)
+		data[i] = other.data[i];
+}
+
+/*Mutator: setNumber
 Stores a value at the given index only if the index is
 within valid bounds (0 <= index < size). Invalid indices are
 ignored to protect the array from out-of-bounds writes.
