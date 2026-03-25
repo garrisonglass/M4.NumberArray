@@ -45,6 +45,27 @@ NumberArray::NumberArray(const NumberArray& other)
 	for (int i = 0; i < size; i++)
 		data[i] = other.data[i];
 }
+/*
+Assignment operator
+*/
+NumberArray& NumberArray::operator=(const NumberArray& other)
+{
+	if (this == &other)
+	{
+		return *this;
+	}
+		// Release existing memory
+		delete[] data;
+		// Allocate new memory and copy data
+		size = other.size;
+		data = new double[size];
+		//Deep copy of the elements
+		for (int i = 0; i < size; i++)
+		{
+			data[i] = other.data[i];
+		}
+	return *this;
+}
 
 /*Mutator: setNumber
 Stores a value at the given index only if the index is
