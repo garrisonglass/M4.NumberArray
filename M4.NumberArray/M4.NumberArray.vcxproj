@@ -129,6 +129,9 @@
   <ItemGroup>
     <ClCompile Include="M4.NumberArray.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="NumberArray.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
