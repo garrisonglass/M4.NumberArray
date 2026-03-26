@@ -87,12 +87,12 @@ This prevents the caller from ever accessing invalid memory.
 */
 double NumberArray::getNumber(int index) const
 {
-	static const double D_FAULT = 0.0;
-
-	if (index >= 0 && index < size)
+	if(index < 0 || index >= size)
+	{
+		throw out_of_range("Index is out of bounds.");
+	}
 		return data[index];
-	else
-		return D_FAULT;
+	
 }
 /*
 getMin
