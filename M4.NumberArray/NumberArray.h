@@ -16,7 +16,7 @@ private:
 public:
 	/*
 	Constructor: allocates memory and initializes all elements
-	to 0.0. If an invalid size is provided, MAX_SIZE is used.
+	to 0.0. Throws an exception if the size is invalid.
 	*/
 	NumberArray(int size);
 
@@ -38,13 +38,13 @@ public:
 
 	/*
 	Mutator: stores a value at the given index only if the index
-	is within bounds. Invalid index are ignored.
+	is within bounds. Throws an exception if the index is out of bounds.
 	*/
 	void setNumber(int index, double value);
 
 	/*
-	Accessor: retrieves the value at the given index. If the
-	index is invalid, a static default value (0.0) is returned.
+	Accessor: Returns the value at the given index. Throws an exception if the
+    index is out of bounds.
 	*/
 	double getNumber(int index) const;
 

@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="M4.NumberArray/M4.NumberArray.vcxproj" />
+  <Project Path="M4.NumberArray/M4.NumberArray.vcxproj" Id="1a32be78-51d0-487e-b6c1-4d8f48c74632" />
 </Solution>

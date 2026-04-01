@@ -7,7 +7,7 @@ using namespace std;
 /*
  Constructor
  Allocates a dynamic array of the specified size. If the size
- is less than or equal to 0, it defaults to MAX_SIZE.
+ is less than or equal to 0, throws exception.
  Initializes all elements of the array to 0.0.
 */
 NumberArray::NumberArray(int size)
@@ -27,7 +27,7 @@ NumberArray::NumberArray(int size)
 Destructor
 Releases the dynamically allocated array. A confirmation
 message is printed so the test program can verify that the
-estructor executed at the correct time.
+destructor executed at the correct time.
 */
 NumberArray::~NumberArray()
 {
@@ -36,6 +36,7 @@ NumberArray::~NumberArray()
 }
 /*
 Copy constructor
+Creates a deep copy of another NumberArray by allocating new memory and copying each element.
 */
 NumberArray::NumberArray(const NumberArray& other)
 	: size(other.size),
@@ -47,6 +48,7 @@ NumberArray::NumberArray(const NumberArray& other)
 }
 /*
 Assignment operator
+Handles self-assignment, releases old memory, allocates new memory, and copies data from the other NumberArray.
 */
 NumberArray& NumberArray::operator=(const NumberArray& other)
 {
@@ -54,9 +56,9 @@ NumberArray& NumberArray::operator=(const NumberArray& other)
 	{
 		return *this;
 	}
-		// Release existing memory
+		//Release existing memory
 		delete[] data;
-		// Allocate new memory and copy data
+		//Allocate new memory and copy data
 		size = other.size;
 		data = new double[size];
 		//Deep copy of the elements
@@ -82,8 +84,7 @@ void NumberArray::setNumber(int index, double value)
 /*
 Accessor: getNumber
 Returns the value stored at the given index. If the index is
-invalid, a static default value (0.0) is returned instead.
-This prevents the caller from ever accessing invalid memory.
+invalid, throws an exception.
 */
 double NumberArray::getNumber(int index) const
 {
@@ -143,7 +144,7 @@ double NumberArray::getAvg() const
 }
 /*
 print
-// Displays all values in the array.
+//Displays all values in the array.
 */
 void NumberArray::print() const
 {
