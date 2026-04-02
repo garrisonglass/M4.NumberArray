@@ -1,3 +1,5 @@
+//NumberArray.h : This file contains the declaration of the NumberArray class.
+
 #ifndef NUMBERARRAY_H
 #define NUMBERARRAY_H
 

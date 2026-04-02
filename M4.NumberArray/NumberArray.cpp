@@ -1,3 +1,5 @@
+//NumberArray.cpp : This file contains the implementation of the NumberArray class.
+
 #include "NumberArray.h"
 #include <stdexcept>
 #include <iostream>

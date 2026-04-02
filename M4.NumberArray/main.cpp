@@ -1,4 +1,4 @@
-// NumberArray.cpp : This file contains the 'main' function. 
+// NumberArray.cpp : This file contains the 'main' test program for NumberArray.
 
 #include <iostream>
 #include "NumberArray.h"
