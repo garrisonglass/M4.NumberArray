@@ -32,7 +32,7 @@ destructor executed at the correct time.
 NumberArray::~NumberArray()
 {
 	delete[] data;
-	cout << "Destructor called. Memory released.\n";
+	cout << "Destructor called for object at memory " << this << ". Memory released.\n";
 }
 /*
 Copy constructor
