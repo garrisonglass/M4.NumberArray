@@ -157,7 +157,8 @@ double NumberArray<T>::getAvg() const
 print
 //Displays all values in the array.
 */
-void NumberArray::print() const
+template <typename T>
+void NumberArray<T>::print() const
 {
 	for (int i = 0; i < size; i++)
 		cout << data[i] << " ";
