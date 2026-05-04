@@ -93,11 +93,12 @@ Accessor: getNumber
 Returns the value stored at the given index. If the index is
 invalid, throws an exception.
 */
-double NumberArray::getNumber(int index) const
+template <typename T>
+T NumberArray<T>::getNumber(int index) const
 {
 	if(index < 0 || index >= size)
 	{
-		throw out_of_range("Index is out of bounds.");
+		throw std::out_of_range("Index is out of bounds.");
 	}
 		return data[index];
 	
