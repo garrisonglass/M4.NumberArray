@@ -42,11 +42,12 @@ NumberArray<T>::~NumberArray()
 Copy constructor
 Creates a deep copy of another NumberArray by allocating new memory and copying each element.
 */
-NumberArray::NumberArray(const NumberArray& other)
+template <typename T>	
+NumberArray<T>::NumberArray(const NumberArray<T>& other)
 	: size(other.size),
 	  data(nullptr)
 {
-	data = new double[size];
+	data = new T[size];
 	for (int i = 0; i < size; i++)
 		data[i] = other.data[i];
 }
