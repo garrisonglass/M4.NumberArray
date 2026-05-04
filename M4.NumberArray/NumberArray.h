@@ -3,7 +3,8 @@
 #ifndef NUMBERARRAY_H
 #define NUMBERARRAY_H
 
-
+#include <stdexcept>
+#include <iostream>
 
 template <typename T>
 class NumberArray
@@ -219,9 +220,9 @@ template <typename T>
 void NumberArray<T>::print() const
 {
 	for (int i = 0; i < size; i++)
-		cout << data[i] << " ";
+		std::cout << data[i] << " ";
 
-	cout << endl;
+	std::cout << std::endl;
 }
 #endif
 
