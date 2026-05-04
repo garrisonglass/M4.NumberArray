@@ -55,7 +55,8 @@ NumberArray<T>::NumberArray(const NumberArray<T>& other)
 Assignment operator
 Handles self-assignment, releases old memory, allocates new memory, and copies data from the other NumberArray.
 */
-NumberArray& NumberArray::operator=(const NumberArray& other)
+template <typename T>
+NumberArray<T>& NumberArray<T>::operator=(const NumberArray<T>& other)
 {
 	if (this == &other)
 	{
@@ -65,7 +66,7 @@ NumberArray& NumberArray::operator=(const NumberArray& other)
 		delete[] data;
 		//Allocate new memory and copy data
 		size = other.size;
-		data = new double[size];
+		data = new T[size];
 		//Deep copy of the elements
 		for (int i = 0; i < size; i++)
 		{
