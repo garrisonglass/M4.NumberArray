@@ -32,7 +32,8 @@ Releases the dynamically allocated array. A confirmation
 message is printed so the test program can verify that the
 destructor executed at the correct time.
 */
-NumberArray::~NumberArray()
+template <typename T>
+NumberArray<T>::~NumberArray()
 {
 	delete[] data;
 	cout << "Destructor called for object at memory " << this << ". Memory released.\n";
