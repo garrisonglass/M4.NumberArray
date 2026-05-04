@@ -12,7 +12,8 @@ using namespace std;
  is less than or equal to 0, throws exception.
  Initializes all elements of the array to 0.0.
 */
-NumberArray::NumberArray(int size)
+template <typename T>
+NumberArray<T>::NumberArray(int size)
 	: size(size),
 	  data(nullptr)
 {

@@ -5,7 +5,7 @@
 
 
 
-
+template <typename T>
 class NumberArray
 
 {
@@ -31,31 +31,31 @@ public:
 	/*
 	Copy constructor (Rule of three): creates a deep copy of another NumberArray
 	*/
-	NumberArray(const NumberArray& other);
+	NumberArray(const NumberArray<T>& other);
 
 	/*
 	Assignment operator (Rule of three): assigns one NumberArray to another, ensuring proper memory management
 	*/
-	NumberArray& operator=(const NumberArray& other);
+	NumberArray<T>& operator=(const NumberArray<T>& other);
 
 	/*
 	Mutator: stores a value at the given index only if the index
 	is within bounds. Throws an exception if the index is out of bounds.
 	*/
-	void setNumber(int index, double value);
+	void setNumber(int index, T value);
 
 	/*
 	Accessor: Returns the value at the given index. Throws an exception if the
     index is out of bounds.
 	*/
-	double getNumber(int index) const;
+	T getNumber(int index) const;
 
 	/*
 	Statistical functions: compute min, max, and average
 	dynamically by scanning the array.
 	*/
-	double getMin() const;
-	double getMax() const;
+	T getMin() const;
+	T getMax() const;
 	double getAvg() const;
 
 	//Print function: displays all values in the array.
