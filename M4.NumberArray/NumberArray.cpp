@@ -79,11 +79,12 @@ NumberArray<T>& NumberArray<T>::operator=(const NumberArray<T>& other)
 Stores a value at the given index only if the index is
 within valid bounds (index < 0 or >= size). Invalid indices throws an exception.
 */
-void NumberArray::setNumber(int index, double value)
+template <typename T>
+void NumberArray<T>::setNumber(int index, T value)
 {
 	if (index < 0 || index >= size)
 	{
-		throw out_of_range("Index is out of bounds.");
+		throw std::out_of_range("Index is out of bounds.");
 	}	
 	data[index] = value;
 }
