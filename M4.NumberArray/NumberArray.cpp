@@ -144,7 +144,8 @@ Computes the average by summing all elements and dividing by
 the number of elements. The array will always have at
 least one element because the constructor enforces a valid size.
 */
-double NumberArray::getAvg() const
+template <typename T>
+double NumberArray<T>::getAvg() const
 {
 	double sum = 0.0;
 
