@@ -109,9 +109,10 @@ Scans the array and returns the smallest value. Because the
 constructor initializes all elements to 0.0, the array will always
 contain valid numeric data.
 */
-double NumberArray::getMin() const
+template <typename T>
+T NumberArray<T>::getMin() const
 {
-	double min = data[0];
+	T min = data[0];
 
 	for (int i = 1; i < size; i++)
 	{
@@ -125,9 +126,10 @@ getMax
 Scans the array and returns the largest value. No values are
 pre-stored; the result is computed dynamically each time.
 */
-double NumberArray::getMax() const
+template <typename T>
+T NumberArray<T>::getMax() const
 {
-	double max = data[0];
+	T max = data[0];
 
 	for (int i = 1; i < size; i++)
 	{
