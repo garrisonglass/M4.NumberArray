@@ -20,6 +20,27 @@ int main()
 		cout << "Exception caught: " << e.what() << "\n\n";
 	}
 
+	cout << "Exception Test\n";
+
+	try
+	{
+		NumberArray<int> a(5);
+
+		//Valid arrgument
+		a.setNumber(0, 10);
+		cout << "Valid:a[0] = " << a.getNumber(0) << "\n";
+
+		//Invalid entry
+		cout << "Invalide test\n";
+		a.getNumber(10);
+	}
+			catch (const out_of_range& e)
+			{
+				cout << "Caught exception: " << e.what() << "\n";
+			}
+		
+	
+			return 0;
 }
 
 //		//Test 1: Create a NumberArray and set values, then display them

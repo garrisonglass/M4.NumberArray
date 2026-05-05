@@ -12,7 +12,7 @@ class NumberArray
 {
 private:
 	int     size; //Number of elements in the array
-	double* data; //Pointer to dynamically allocated array
+	T* data; //Pointer to dynamically allocated array
 
 	
 
@@ -95,7 +95,7 @@ template <typename T>
 NumberArray<T>::~NumberArray()
 {
 	delete[] data;
-	cout << "Destructor called for object at memory " << this << ". Memory released.\n";
+	std::cout << "Destructor called for object at memory " << this << ". Memory released.\n";
 }
 /*
 Copy constructor
