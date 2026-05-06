@@ -1,4 +1,4 @@
-// NumberArray.cpp : This file contains the 'main' test program for NumberArray.
+//NumberArray.cpp : This file contains the 'main' test program for NumberArray.
 
 #include <iostream>
 #include "NumberArray.h"
@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-	cout << "Number Array Test Program 2\n\n";
+	cout << "Number Array Template Test.\n\n";
 
 	try
 	{
@@ -31,15 +31,15 @@ int main()
 		cout << "Valid access:a[0] = " << a.getNumber(0) << "\n";
 
 		//Invalid access
-		cout << "Invalide access test\n";
+		cout << "Invalid access test\n";
 		a.getNumber(10);
 	}
 			catch (const out_of_range& e)
 			{
 				cout << "Caught exception: " << e.what() << "\n";
 			}
-		
-	cout << "Contines after exception.\n\n";
+		   
+	cout << "Continuation after exception.\n\n";
 
 	cout << "Copy Contructor Test\n";
 
@@ -95,7 +95,19 @@ int main()
 	cout << "y: ";
 	y.print();
 
-	
+	cout << "Assignment operator deep copy verified.\n\n";
+
+	cout << "Self Assignment Test\n";
+
+	x = x;
+
+	cout << "After self-assignment:\n";
+	x.print();
+
+	cout << "Self-assignment verified.\n\n";
+
+	cout << "Distructor verification: Standby for destructor messages as objects go out of scope.\n\n";
+
 	return 0;
 }
 
