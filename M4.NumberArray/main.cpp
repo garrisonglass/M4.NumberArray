@@ -26,12 +26,12 @@ int main()
 	{
 		NumberArray<int> a(5);
 
-		//Valid arrgument
+		//Valid access
 		a.setNumber(0, 10);
-		cout << "Valid:a[0] = " << a.getNumber(0) << "\n";
+		cout << "Valid access:a[0] = " << a.getNumber(0) << "\n";
 
-		//Invalid entry
-		cout << "Invalide test\n";
+		//Invalid access
+		cout << "Invalide access test\n";
 		a.getNumber(10);
 	}
 			catch (const out_of_range& e)
@@ -39,8 +39,64 @@ int main()
 				cout << "Caught exception: " << e.what() << "\n";
 			}
 		
+	cout << "Contines after exception.\n\n";
+
+	cout << "Copy Contructor Test\n";
+
+	NumberArray<int> original(5);
+	for (int i = 0; i < 5; i++)
+		original.setNumber(i, i * 10);
+
+	cout << "Original Array:\n";
+	original.print();
+
+	NumberArray<int> copy(original);
+
+	cout << "Copy Constructed Array:\n";
+	copy.print();
+
+	//Modify copy and show original is unaffected	
+	copy.setNumber(0, 999);
+
+	cout << "After modifying original\n";
+	cout << "Original:  ";
+	original.print();
+	cout << "Copy:      ";
+	copy.print();
+
+	cout << "Copy contructor deep copy verified.\n\n";
+
+	cout << "Assignment Operator Test\n";
+
+	NumberArray<int> x(4);
+	NumberArray<int> y(4);
+
+	for (int i = 0; i < 4; i++)
+	{
+		x.setNumber(i, i + 1);
+	}
+
+	cout << "x before assignment:\n";
+	x.print();
+	cout << "y before assignment:\n";
+	y.print();
+
+	y = x;
+
+	cout << "y after assignment:\n";
+	y.print();
+
+	//Modify x and show y is unaffected
+	x.setNumber(0, 789);
+
+	cout << "After modifying x\n";
+	cout << "x: ";
+	x.print();
+	cout << "y: ";
+	y.print();
+
 	
-			return 0;
+	return 0;
 }
 
 //		//Test 1: Create a NumberArray and set values, then display them

@@ -13,8 +13,7 @@ class NumberArray
 private:
 	int     size; //Number of elements in the array
 	T* data; //Pointer to dynamically allocated array
-
-	
+		
 
 public:
 	/*
