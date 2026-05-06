@@ -1,4 +1,4 @@
-//NumberArray.cpp : This file contains the 'main' test program for NumberArray.
+//NumberArray.cpp : This file contains the main() test program for NumberArray.
 
 #include <iostream>
 #include "NumberArray.h"
@@ -22,6 +22,7 @@ int main()
 	}
 
 	//Exception Handling Test
+	//Valid and invalid access to setNumber and getNumber
 	cout << "Exception Test\n";
 
 	try
