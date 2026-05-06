@@ -8,7 +8,8 @@ using namespace std;
 int main()
 {
 	cout << "Number Array Template Test.\n\n";
-
+	//Template Instantiation Test
+	//Create NumberArray<int> and NumberArray<double>
 	try
 	{
 		NumberArray<int> intArray(5);
@@ -20,6 +21,7 @@ int main()
 		cout << "Exception caught: " << e.what() << "\n\n";
 	}
 
+	//Exception Handling Test
 	cout << "Exception Test\n";
 
 	try
@@ -32,15 +34,16 @@ int main()
 
 		//Invalid access
 		cout << "Invalid access test\n";
-		a.getNumber(10);
+		a.getNumber(10);//Should throw an exception
 	}
-			catch (const out_of_range& e)
-			{
-				cout << "Caught exception: " << e.what() << "\n";
-			}
+	catch (const out_of_range& e)
+		{
+		cout << "Caught exception: " << e.what() << "\n";
+		}
 		   
 	cout << "Continuation after exception.\n\n";
-
+	//Copy Constructor Test
+	//Verify deep copy behavior
 	cout << "Copy Contructor Test\n";
 
 	NumberArray<int> original(5);
@@ -50,7 +53,7 @@ int main()
 	cout << "Original Array:\n";
 	original.print();
 
-	NumberArray<int> copy(original);
+	NumberArray<int> copy(original);//Copy constructor
 
 	cout << "Copy Constructed Array:\n";
 	copy.print();
@@ -65,7 +68,8 @@ int main()
 	copy.print();
 
 	cout << "Copy contructor deep copy verified.\n\n";
-
+	//Assignment Operator Test
+	//Verify deep copy behavior for assignment
 	cout << "Assignment Operator Test\n";
 
 	NumberArray<int> x(4);
@@ -81,7 +85,7 @@ int main()
 	cout << "y before assignment:\n";
 	y.print();
 
-	y = x;
+	y = x;//Assignment operator
 
 	cout << "y after assignment:\n";
 	y.print();
@@ -96,17 +100,19 @@ int main()
 	y.print();
 
 	cout << "Assignment operator deep copy verified.\n\n";
-
+	//Self-Assignment Test
+	//Verify that self-assignment does not cause issues
 	cout << "Self Assignment Test\n";
 
-	x = x;
+	x = x;//Self-assignment
 
 	cout << "After self-assignment:\n";
 	x.print();
 
 	cout << "Self-assignment verified.\n\n";
-
-	cout << "Distructor verification: Standby for destructor messages as objects go out of scope.\n\n";
+	//Destructor Test
+	//Verify that destructors are called and memory is released
+	cout << "Destructor verification: Standby for destructor messages as objects go out of scope.\n\n";
 
 	return 0;
 }
